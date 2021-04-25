@@ -1,9 +1,9 @@
 #Trendyol System Bootcamp Mezuniyet Projesi 1
 
 ##1. Case
-|      | Box | Hostname |  IP |
-| :--- | :---: | :---: | :---: |
-| **Libvirt** | centos/7 | task-1 |192.168.80.50 |
+| Machine  Name | Network Configuration                  | OS                         |
+|---------------|----------------------------------------|----------------------------|
+| task1        | IP: 192.168.80.50    | CentOS/7   |
 
 ####1.1 Sanal makinada bir Centos kurup, güncellemelerinin yapılması
 
