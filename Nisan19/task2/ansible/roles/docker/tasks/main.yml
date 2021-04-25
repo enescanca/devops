@@ -1,5 +1,5 @@
 ---
-- name: Install recommended package (to use AUFS storage drivers)
+- name: Install recommended package 
   apt:
     name: "linux-image-extra-virtual"
     update_cache: yes
