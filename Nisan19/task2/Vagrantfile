@@ -4,8 +4,8 @@ Vagrant.configure(2) do |config|
   config.vm.define "host", primary: true do |h|
     h.vm.box = "ubuntu/focal64"
     h.vm.hostname =  "ansible-host"
-    h.vm.network "private_network", ip: "192.168.80.55"
-    h.vm.network "forwarded_port", guest: 22, host: "2205", id: "ssh"
+    h.vm.network "private_network", ip: "192.168.80.51"
+    h.vm.network "forwarded_port", guest: 22, host: "2201", id: "ssh"
     h.vm.provision :shell, inline: "echo 'export ANSIBLE_CONFIG=/vagrant/ansible/ansible.cfg' >> /home/vagrant/.bash_profile"
     h.vm.provision "shell" do |provision|
       provision.path = "provision_ansible.sh"
@@ -27,8 +27,8 @@ EOF
   config.vm.define "worker" do |h|
     h.vm.box = "ubuntu/focal64"
     h.vm.hostname = "ansible-worker"
-    h.vm.network "private_network", ip: "192.168.80.56"
-    h.vm.network "forwarded_port", guest: 22, host: "2206", id: "ssh"
+    h.vm.network "private_network", ip: "192.168.80.52"
+    h.vm.network "forwarded_port", guest: 22, host: "2202", id: "ssh"
     h.vm.provision :shell, inline: 'cat /vagrant/control.pub >> /home/vagrant/.ssh/authorized_keys'
     config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
