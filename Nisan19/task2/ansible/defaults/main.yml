@@ -1,0 +1,12 @@
+---
+system_user: vagrant
+compose_project_dir: /home/{{ system_user }}/compose-wordpress
+
+wp_version: 4.7.5
+wp_db_name: wordpress
+wp_db_tb_pre: wp_
+wp_db_host: mysql
+wp_db_psw: change-M3
+
+# If you want to specify all variables without interactive prompts, can you
+# do so by using: --extra-vars
