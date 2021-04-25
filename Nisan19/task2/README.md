@@ -22,6 +22,7 @@
 
 #### Dosya Yapısı
 
+```
 .
 ├── ansible
 │   ├── ansible.cfg
@@ -46,22 +47,31 @@
 │   └── wordpress-docker.yml
 ├── provision_ansible.sh
 └── Vagrantfile
+```
+
 
 ### Roller
 
+```
 ├── docker
 │   └── tasks
 │       └── main.yml
+```
 
-Docker bağımlılıklarını ve gereksinimlerini karşılar.
 
+- Docker bağımlılıklarını ve gereksinimlerini karşılar.
+
+```
 ├── python
 │   └── tasks
 │       └── main.yml
+```
 
-Vagrantfile içinde yüklenemiş olan python paketlerini  kontrol eder, kurulu değilse kurulumun sağlar.
+
+- Vagrantfile içinde yüklenemiş olan python paketlerini  kontrol eder, kurulu değilse kurulumun sağlar.
 
 
+```
 └── wordpress-docker
 │   ├── tasks
 │   |   └── main.yml
@@ -69,17 +79,22 @@ Vagrantfile içinde yüklenemiş olan python paketlerini  kontrol eder, kurulu d
 │       ├── docker-compose.j2
 │       ├── static.j2
 │       └── wordpress-nginx.j2
+```
 
-main.yml içerisinde docker-compose.yml'ın oluşturulması Wordpress/MariaDB/Nginx containerlarının deploy'u ve static page'in oluşturulması için konfigürasyon ayarları yer almaktadır.
-docker-compose.j2  : Worker'da çalıştırılacak docker-compose dosyası
-static.j2          : bootcamp=devops' header'ı geldiğinde yönlendirilecek statik sayfası
-wordpress-nginx.j2 : Wordpress ve bootcamp=devops' header'ı geldiğinde yönlendirilecek statik sayfası için oluşturulmuş Nginx Konfigürasyon dosyası
+
+
+- main.yml içerisinde docker-compose.yml'ın oluşturulması Wordpress/MariaDB/Nginx containerlarının deploy'u ve static page'in oluşturulması için konfigürasyon ayarları yer almaktadır.
+- docker-compose.j2  : Worker'da çalıştırılacak docker-compose dosyası
+- static.j2          : bootcamp=devops' header'ı geldiğinde yönlendirilecek statik sayfası
+- wordpress-nginx.
+j2 : Wordpress ve bootcamp=devops' header'ı geldiğinde yönlendirilecek statik sayfası için oluşturulmuş Nginx Konfigürasyon dosyası
 
 
 
 Kaynaklar:
 
-https://github.com/bilalcaliskan/vagrant-ansible-lab/
-https://github.com/jamesattard/docker-ansible-wordpress
-https://stackoverflow.com/a/26223734
+- https://github.com/bilalcaliskan/vagrant-ansible-lab/
+- https://github.com/jamesattard/docker-ansible-wordpress
+- https://stackoverflow.com/a/26223734
+
 
