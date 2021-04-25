@@ -1,11 +1,11 @@
-#Trendyol System Bootcamp Mezuniyet Projesi 1
+# Trendyol System Bootcamp Mezuniyet Projesi 1
 
-##1. Case
+## 1. Case
 | Machine  Name | Network Configuration                  | OS                         |
 |---------------|----------------------------------------|----------------------------|
 | task1        | IP: 192.168.80.50    | CentOS/7   |
 
-####1.1 Sanal makinada bir Centos kurup, güncellemelerinin yapılması
+#### 1.1 Sanal makinada bir Centos kurup, güncellemelerinin yapılması
 
 Kurulum esnasında  "Wheel" grubunda ki noname kullanıcısı ile aşağıdaki komut çalıştırılır.
 
@@ -31,7 +31,7 @@ Sonraki işlemleri gerçekleştirmek için enes.canca kullanıcısına geçilir.
 # su - enes.canca
 ```
 
-####1.3. Sunucuya 2. disk olarak 10 GB disk eklenmesi ve "bootcamp" olarak mount edilmesi
+#### 1.3. Sunucuya 2. disk olarak 10 GB disk eklenmesi ve "bootcamp" olarak mount edilmesi
 
 
 ```bash
