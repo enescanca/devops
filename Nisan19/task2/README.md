@@ -89,6 +89,45 @@
 - wordpress-nginx.
 j2 : Wordpress ve bootcamp=devops' header'ı geldiğinde yönlendirilecek statik sayfası için oluşturulmuş Nginx Konfigürasyon dosyası
 
+### 2.2 İlk adımda dockerize edilen uygulamanın Nginx üzerinden serve edilmesi ve gelen request içerisinde bootcamp=devops header'ı varsa "Hoşgeldin Devops" statik sayfasına yönlenebilmesi
+
+Aşağıda yapılan konfigürasyonlar bootcamp = "devops" header'ı geldiğinde static olarak belirlenen static.php sayfası görüntülenecektir.
+
+
+
+
+
+```
+./ansible/roles/wordpress-docker/tasks/main.yml
+
+- name: creating static page
+  template:
+    src: static.j2
+    dest: "{{ compose_project_dir }}/static.php"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: 0644
+
+```
+- wordpress-docker rolünde static sayfanın wordpress dizinine eklenmesi
+
+```
+./ansible/roles/wordpress-docker/templates/wordpress-nginx.j2
+
+location = / {
+    if ($http_bootcamp = "devops") {
+    return 301  http://{{ domain }}/static.php;
+    }
+```
+- bootcamp = "devops" headerı geldiğinde {{ domain }}/static.php sayfasına yönlendirilmesi
+
+```
+./ansible/roles/wordpress-docker/templates/docker-compose.j2
+
+    volumes:
+      - ./wordpress:/var/www/html
+
+```
 
 
 Kaynaklar:
