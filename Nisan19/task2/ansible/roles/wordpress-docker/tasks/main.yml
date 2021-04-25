@@ -52,7 +52,7 @@
     dest: "{{ compose_project_dir }}/static.php"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
-    mode: 0777
+    mode: 0644
 
 - name: Run docker-compose up
   command: docker-compose -f docker-compose.yml up -d
